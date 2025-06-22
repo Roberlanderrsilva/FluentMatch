@@ -1,0 +1,161 @@
+Combinado, Roberlande! Abaixo está um **resumo completo e estruturado do projeto FluentMatch**, com explicações claras de cada etapa e seus respectivos *prompts* (em português) para que qualquer IA ou colaborador consiga entender e continuar o projeto de onde você parar. Isso funciona tanto como guia técnico quanto como documento de visão.
+
+---
+
+## 🧩 FLUENTMATCH – RESUMO GERAL DO PROJETO
+
+**Propósito:** Plataforma web (responsiva) para conectar pessoas de diferentes países que querem praticar idiomas entre si, por meio de chats de vídeo e texto, com foco em usabilidade, acessibilidade e escalabilidade.
+
+**Idiomas foco:** Português, Inglês, Espanhol e Francês  
+**Público-alvo:** Estudantes, autodidatas, imigrantes, nômades digitais, professores, turistas
+
+---
+
+## 🚧 ARQUITETURA E TECNOLOGIA
+
+- **Frontend:** Next.js + Tailwind CSS (visual e responsividade)
+- **Backend:** Firebase (Auth, Firestore, Hosting)
+- **Videochamada:** WebRTC integrado com Firebase
+- **Chat:** Firestore (mensagens em tempo real)
+- **Hospedagem:** Vercel ou Firebase Hosting
+- **Protótipos:** Figma
+- **Versão Inicial:** Aplicativo Web Responsivo (acessível via navegador em desktop e mobile)
+- **Modelo de negócio:** Freemium, com planos acessíveis + possíveis parcerias B2B (escolas, ONGs)
+
+---
+
+## 🧭 CRONOGRAMA RESUMIDO (ETAPAS + PROMPTS)
+
+### **1. Definição Estratégica**
+**Objetivo:** Planejar os fundamentos do projeto
+**Prompt:**
+```txt
+Defina nome, propósito, missão e público do projeto. Liste idiomas suportados e o impacto desejado. Ex: "Nome: FluentMatch. Missão: Conectar pessoas reais para conversas reais em diferentes idiomas. Público: pessoas aprendendo português, inglês, espanhol ou francês."
+```
+
+---
+
+### **2. Protótipo e Design**
+**Objetivo:** Criar as telas do MVP visualmente
+**Prompt:**
+```txt
+Use o Figma para desenhar as seguintes telas:
+- Login/Cadastro
+- Seleção de idiomas
+- Pareamento com outro usuário
+- Tela de chat (texto + vídeo)
+- Perfil
+Paleta de cores: azul (confiança), verde (crescimento), amarelo claro (energia).
+Fonte: Inter ou Poppins.
+```
+
+---
+
+### **3. Stack Tecnológica**
+**Objetivo:** Escolher as ferramentas de desenvolvimento
+**Prompt:**
+```txt
+Tecnologias sugeridas:
+- Frontend: Next.js + Tailwind CSS
+- Backend/Auth: Firebase
+- Chat: Firestore realtime
+- Vídeo: WebRTC
+- Hospedagem: Vercel ou Firebase Hosting
+Explique por que são ideais para MVPs rápidos e gratuitos.
+```
+
+---
+
+### **4. Desenvolvimento do MVP**
+**Objetivo:** Implementar as funções mínimas viáveis
+**Prompt:**
+```txt
+Desenvolva um MVP com:
+- Cadastro/login de usuário
+- Escolha de idioma nativo e idioma de prática
+- Pareamento baseado em interesse linguístico cruzado
+- Chat de texto funcional
+- Tela de perfil com opções básicas
+```
+
+---
+
+### **5. Testes com Usuários**
+**Objetivo:** Validar a usabilidade e interesse real
+**Prompt:**
+```txt
+Convoque usuários reais para testar o MVP e colete feedback sobre:
+- Facilidade de uso
+- Qualidade da conexão
+- Interesse em continuar
+Crie formulário de feedback com Google Forms.
+```
+
+---
+
+### **6. Landing Page**
+**Objetivo:** Apresentar a plataforma de forma simples e captar interessados
+**Prompt:**
+```txt
+Crie uma landing page com:
+- Nome e descrição da plataforma
+- Imagens ilustrativas ou prints do protótipo
+- Call to action: “Inscreva-se para testar em primeira mão”
+Ferramentas: Carrd, Framer ou Webflow
+```
+
+---
+
+### **7. Apresentação para Investidores ou Parceiros**
+**Objetivo:** Conseguir apoio ou recursos
+**Prompt:**
+```txt
+Monte um kit de apresentação com:
+- PDF com visão do negócio
+- Protótipo do Figma
+- Link do MVP (ou landing page)
+- Argumentos de impacto social, escalabilidade e acessibilidade
+```
+
+---
+
+### **8. Marketing e Comunidade**
+**Objetivo:** Atrair usuários e gerar valor de marca
+**Prompt:**
+```txt
+Crie perfis no TikTok, Instagram e Threads
+Compartilhe:
+- Bastidores da criação
+- Dicas de idiomas
+- Benefícios da prática com pessoas reais
+Use hashtags como: #aprendaidiomas #fluentmatch #poliglotas
+```
+
+---
+
+### **9. Expansão**
+**Objetivo:** Evoluir o projeto com base nos dados dos testes
+**Prompt:**
+```txt
+Crie um plano para incluir:
+- App nativo (usando React Native)
+- Traduções automáticas ou revisão por IA
+- Monetização avançada: moedas, filtros, aulas
+Avalie integração com escolas, plataformas de ensino e ONGs.
+```
+
+---
+
+## ✅ RECOMENDAÇÕES PARA EXECUÇÃO EFICIENTE
+
+- Use ferramentas gratuitas nas primeiras fases (Firebase, Vercel, Figma)
+- Trabalhe por sprints (ex: 1 sprint = 1 etapa do cronograma)
+- Registre todas as decisões em um repositório no GitHub
+- Construa antes a comunidade — feedback real vale mais do que perfeição
+- Não espere ficar tudo “pronto” para lançar algo testável. Valide cedo!
+
+---
+
+Se quiser, posso salvar todo esse resumo num **arquivo .txt ou .pdf** com título e organização para você baixar agora. Ou transformar isso em um **repositório inicial para VS Code**, com pastas e arquivos base para cada etapa.
+
+Como quer seguir? Posso empacotar esse resumão do FluentMatch para você agora! 📦🌍

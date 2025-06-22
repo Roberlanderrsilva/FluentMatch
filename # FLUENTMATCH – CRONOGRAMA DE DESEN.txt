@@ -1,0 +1,49 @@
+# FLUENTMATCH – CRONOGRAMA DE DESENVOLVIMENTO
+
+## 1. Definição Estratégica
+- Nome do projeto: FluentMatch
+- Missão: Quebrar barreiras linguísticas conectando pessoas reais em conversas reais.
+- Objetivo: Criar uma plataforma acessível para prática de idiomas via chat de vídeo e texto.
+- Idiomas foco: Português, Inglês, Espanhol, Francês
+- Público-alvo: Estudantes, autodidatas, viajantes, imigrantes, professores
+
+## 2. Protótipo e Design
+- Criar wireframes no Figma (login, seleção de idioma, pareamento, chat, perfil)
+- Paleta de cores: Azul (confiança), Verde (crescimento), Amarelo claro (energia)
+- Fontes: Inter ou Poppins
+- Criar identidade visual com logo e frase de impacto
+
+## 3. Stack Tecnológica
+- Frontend: Next.js + Tailwind CSS
+- Backend: Firebase (Auth, Firestore, Hosting)
+- Chat: Firestore (tempo real)
+- Vídeo: WebRTC + Firebase
+- Hospedagem: Vercel ou Firebase Hosting
+
+## 4. MVP (Produto Mínimo Viável)
+- Cadastro/login com e-mail
+- Escolha de idioma nativo e idioma a praticar
+- Pareamento com outro usuário com interesse cruzado
+- Chat de texto funcional
+- Tela de perfil com configurações básicas
+
+## 5. Testes com Usuários
+- Convidar amigos e seguidores para testar
+- Observar usabilidade e engajamento
+- Coletar feedback com Google Forms ou Typeform
+- Ajustar MVP com base nas sugestões
+
+## 6. Landing Page
+- Criar página com Carrd, Framer ou Webflow
+- Incluir: nome, logo, propósito, formulário de interesse
+- Linkar com o MVP (quando estiver pronto)
+
+## 7. Apresentação para Parceiros
+- Usar PDF + protótipo para apresentar a ideia
+- Criar pitch de 2 minutos com impacto social e modelo de negócio
+- Buscar parcerias com escolas de idiomas, ONGs ou investidores-anjo
+
+## 8. Marketing e Comunidade
+- Criar perfis no TikTok, Instagram, Threads
+- Postar bastidores, dicas de idiomas, convites para testar
+- Usar hashtags: #aprendaidiomas #fluentmatch #conversaçãotes de idiomas, autodidatas, viajantes, imigrantes, professores

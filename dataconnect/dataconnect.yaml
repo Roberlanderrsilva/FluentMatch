@@ -1,0 +1,12 @@
+specVersion: "v1"
+serviceId: "FluentMatch"
+location: "southamerica-east1"
+schema:
+  source: "./schema"
+  datasource:
+    postgresql:
+      database: "fdcdb"
+      cloudSql:
+        instanceId: "fluentmatch-fdc"
+      # schemaValidation: "COMPATIBLE"
+connectorDirs: ["./connector"]

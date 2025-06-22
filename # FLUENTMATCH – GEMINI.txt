@@ -1,0 +1,208 @@
+Roberlande, que ótimo que você está pronto para configurar o ambiente no VS Code\! É um passo fundamental para começar a codificar o FluentMatch.
+
+Infelizmente, como sou uma inteligência artificial baseada em texto, **não consigo gerar ou exibir imagens diretamente neste formato de conversa.** Não tenho a capacidade de interagir visualmente com sua tela ou o VS Code para fornecer capturas de tela passo a passo.
+
+No entanto, posso te dar o **passo a passo detalhado em texto** com os comandos exatos que você precisará digitar e onde clicar. Ele será tão claro quanto possível, e você poderá consultá-lo diretamente no VS Code enquanto segue as instruções.
+
+-----
+
+## 🚀 Configurando o Ambiente do FluentMatch no VS Code (Passo a Passo em Texto)
+
+Vamos configurar o **Frontend com Next.js e Tailwind CSS** e o **Backend com Firebase**.
+
+### Pré-requisitos (O que você precisa ter instalado antes de começar):
+
+1.  **Node.js e npm (ou Yarn):** O Next.js e o Firebase CLI dependem deles. Se não tiver, baixe e instale do site oficial: [nodejs.org](https://nodejs.org/).
+2.  **VS Code:** Já temos, certo?
+3.  **Conta Google:** Essencial para usar o Firebase.
+
+-----
+
+### Passo 1: Abrir a Pasta do Projeto no VS Code
+
+1.  Abra o **VS Code**.
+2.  Vá em `File` (Arquivo) \> `Open Folder...` (Abrir Pasta...).
+3.  Navegue até onde você criou a pasta `FluentMatch` e selecione-a. Clique em `Select Folder` (Selecionar Pasta).
+      * **Resultado:** Você verá a pasta `FluentMatch` e as subpastas `backend/`, `frontend/`, `docs/`, etc., na barra lateral esquerda do VS Code (Explorer).
+
+-----
+
+### Passo 2: Inicializar o Projeto Frontend (Next.js + Tailwind CSS)
+
+Vamos usar o **Terminal Integrado do VS Code** para isso.
+
+1.  No VS Code, vá em `Terminal` \> `New Terminal` (Novo Terminal).
+
+2.  Certifique-se de que o terminal está apontando para o diretório raiz do seu projeto `FluentMatch`. Você verá algo como `seu_usuario@seu_computador:~/caminho/para/FluentMatch$`
+
+3.  **Entre na pasta `frontend`:**
+
+    ```bash
+    cd frontend
+    ```
+
+4.  **Crie um novo projeto Next.js dentro da pasta `frontend`:**
+
+      * **Importante:** Use o ponto (`.`) no final para que o Next.js inicialize o projeto no diretório atual (`frontend/`), em vez de criar uma nova subpasta (`frontend/my-app/`).
+
+    <!-- end list -->
+
+    ```bash
+    npx create-next-app@latest . --ts --eslint --use-npm --src-dir --app --import-alias "@/*"
+    ```
+
+      * **Explicação dos parâmetros:**
+          * `.`: Instala no diretório atual.
+          * `--ts`: Usa TypeScript.
+          * `--eslint`: Configura o ESLint para linting de código.
+          * `--use-npm`: Usa npm (se preferir yarn, mude para `--use-yarn`).
+          * `--src-dir`: Cria uma pasta `src` para o código-fonte (limpa a raiz do projeto).
+          * `--app`: Usa o novo App Router do Next.js.
+          * `--import-alias "@/*"`: Configura um alias para facilitar importações.
+      * Pressione `Enter` para as perguntas (geralmente as opções padrão são boas).
+      * **Resultado:** O Next.js vai baixar e configurar todos os arquivos e dependências dentro da pasta `frontend`.
+
+5.  **Instale o Tailwind CSS no projeto Next.js:**
+
+      * Ainda dentro da pasta `frontend/` no terminal.
+
+    <!-- end list -->
+
+    ```bash
+    npm install -D tailwindcss postcss autoprefixer
+    npx tailwindcss init -p
+    ```
+
+      * **Resultado:** Dois novos arquivos serão criados na raiz da sua pasta `frontend`: `tailwind.config.js` e `postcss.config.js`.
+
+6.  **Configure os arquivos do Tailwind CSS:**
+
+      * **Abra `frontend/tailwind.config.js` no VS Code.**
+      * Localize a seção `content` e adicione os caminhos para seus arquivos de componente e página:
+        ```javascript
+        /** @type {import('tailwindcss').Config} */
+        module.exports = {
+          content: [
+            "./app/**/*.{js,ts,jsx,tsx,mdx}", // Adicione esta linha
+            "./pages/**/*.{js,ts,jsx,tsx,mdx}", // Adicione esta linha
+            "./components/**/*.{js,ts,jsx,tsx,mdx}", // Adicione esta linha
+
+            // Or if using `src` directory:
+            "./src/**/*.{js,ts,jsx,tsx,mdx}", // Esta já deve existir
+          ],
+          theme: {
+            extend: {},
+          },
+          plugins: [],
+        }
+        ```
+      * **Abra `frontend/src/app/layout.tsx` (ou `frontend/pages/_app.tsx` se não usar o App Router) no VS Code.**
+      * Adicione as diretivas do Tailwind CSS no topo do arquivo (dentro da tag `<body className={inter.className}>` ou similar, ou no arquivo CSS global se houver):
+        ```tsx
+        // frontend/src/app/layout.tsx (ou onde seus estilos globais são importados)
+        import './globals.css'; // Isso já deve existir
+        // ... (resto do seu código)
+        ```
+          * **Verifique `frontend/src/app/globals.css`:** Este arquivo deve conter (ou você deve adicionar) as seguintes linhas no topo:
+            ```css
+            @tailwind base;
+            @tailwind components;
+            @tailwind utilities;
+            ```
+      * **Resultado:** Seu frontend está configurado com Next.js e Tailwind CSS.
+
+-----
+
+### Passo 3: Inicializar o Firebase para o Projeto
+
+Agora vamos configurar o Firebase, que será o "backend" e o serviço de hospedagem.
+
+1.  **Instale o Firebase CLI Globalmente:**
+
+      * No terminal do VS Code, volte para a pasta raiz `FluentMatch`:
+        ```bash
+        cd ..
+        ```
+      * Execute o comando para instalar o Firebase CLI:
+        ```bash
+        npm install -g firebase-tools
+        ```
+      * **Resultado:** As ferramentas do Firebase estarão disponíveis globalmente no seu sistema.
+
+2.  **Faça Login no Firebase (usando sua conta Google):**
+
+      * No terminal, execute:
+        ```bash
+        firebase login
+        ```
+      * Isso abrirá uma janela do navegador pedindo para você fazer login com sua conta Google e dar permissões ao Firebase CLI. Siga as instruções na tela.
+      * **Resultado:** Você estará logado no Firebase.
+
+3.  **Inicialize o Projeto Firebase:**
+
+      * Ainda na pasta raiz `FluentMatch/` no terminal:
+        ```bash
+        firebase init
+        ```
+      * O Firebase CLI fará uma série de perguntas. Responda assim:
+          * **"Which Firebase features do you want to set up for this directory?"**: Use a **barra de espaço** para selecionar `Firestore`, `Functions` (para futuras funções de backend), `Hosting`, `Storage` e `Emulators` (para testar localmente). Pressione `Enter`.
+          * **"Please select an option:"**: Selecione `Use an existing project` (usar um projeto existente) ou `Create a new project` (criar um novo projeto). Se for criar um novo, dê um nome único para ele (ex: `fluentmatch-app-123`).
+          * **"What file should be used for Firestore Rules?"**: Pressione `Enter` para aceitar `firestore.rules`.
+          * **"What file should be used for Firestore Indexes?"**: Pressione `Enter` para aceitar `firestore.indexes.json`.
+          * **"What language would you like to use for Cloud Functions?"**: Selecione `JavaScript` (mais simples para começar com Node.js).
+          * **"Do you want to use ESLint to catch probable bugs and enforce style?"**: Responda `Yes`.
+          * **"Do you want to install dependencies with npm now?"**: Responda `Yes`.
+          * **"What do you want to use as your public directory?"**: **IMPORTANTE:** Digite `frontend` (esta será a pasta que o Firebase Hosting vai servir).
+          * **"Configure as a single-page app (rewrite all urls to /index.html)?"**: Responda `Yes` (para que o Next.js funcione bem com roteamento).
+          * **"Set up automatic builds and deploys with GitHub?"**: Responda `No` por enquanto (você pode configurar isso depois).
+          * **"Which port do you want to use for the emulators?"**: Pressione `Enter` para aceitar os padrões.
+          * **"Do you want to download the emulators now?"**: Responda `Yes`.
+      * **Resultado:** Vários arquivos de configuração do Firebase serão criados na raiz da sua pasta `FluentMatch` (como `firebase.json`, `.firebaserc`, `firestore.rules`, e a pasta `functions/`).
+
+-----
+
+### Passo 4: Testar o Setup Inicial
+
+1.  **Testar o Frontend (Next.js):**
+
+      * No terminal do VS Code, entre na pasta `frontend`:
+        ```bash
+        cd frontend
+        ```
+      * Inicie o servidor de desenvolvimento do Next.js:
+        ```bash
+        npm run dev
+        ```
+      * Abra seu navegador e vá para `http://localhost:3000`. Você deverá ver a página inicial padrão do Next.js.
+      * Pressione `Ctrl + C` no terminal para parar o servidor.
+
+2.  **Testar o Firebase Localmente (Emuladores):**
+
+      * No terminal do VS Code, volte para a pasta raiz `FluentMatch`:
+        ```bash
+        cd ..
+        ```
+      * Inicie os emuladores do Firebase (eles simulam os serviços do Firebase no seu computador):
+        ```bash
+        firebase emulators:start --only firestore,auth,hosting
+        ```
+      * Isso iniciará um servidor local e exibirá links no terminal para o Emulator UI (geralmente `http://localhost:4000`). Abra esse link no navegador para ver o painel dos emuladores.
+      * Pressione `Ctrl + C` no terminal para parar os emuladores.
+
+-----
+
+### Passo 5: Adicionar este Guia ao Projeto (Opcional, mas recomendado)
+
+Você pode salvar este passo a passo detalhado como um arquivo `SETUP.md` dentro da pasta `docs/` do seu projeto para referência futura.
+
+1.  No VS Code, clique com o botão direito na pasta `docs/` na barra lateral esquerda.
+2.  Selecione `New File` (Novo Arquivo).
+3.  Digite `SETUP.md` e pressione Enter.
+4.  Copie todo o conteúdo deste guia (do título "Configurando o Ambiente do FluentMatch no VS Code" para baixo) e cole no arquivo `SETUP.md`.
+5.  Salve o arquivo (`Ctrl + S` ou `File > Save`).
+
+-----
+
+Pronto\! Agora você tem uma estrutura de projeto funcional para o FluentMatch, com Next.js configurado no frontend e o Firebase pronto para ser integrado para autenticação, banco de dados e hosting.
+
+Você conseguiu seguir todos os passos? Há algo que não ficou claro ou alguma mensagem de erro que apareceu no terminal?
