@@ -3,6 +3,8 @@
 
 import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation'; // Hook para navegação no Next.js 13+
+import Header from '../components/Header';
+
 
 export default function MatchmakingPage() {
   const [isFindingMatch, setIsFindingMatch] = useState(true);
